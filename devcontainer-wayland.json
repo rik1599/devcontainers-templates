@@ -1,0 +1,11 @@
+{
+    //.devcontainer file with wayland
+    "image": "",
+    "containerEnv": {
+		"XDG_RUNTIME_DIR": "/tmp",
+		"WAYLAND_DISPLAY": "${localEnv:WAYLAND_DISPLAY}"
+	},
+	"runArgs": [
+		"-v", "${localEnv:XDG_RUNTIME_DIR}/${localEnv:WAYLAND_DISPLAY}:/tmp/${localEnv:WAYLAND_DISPLAY}"
+	]
+}

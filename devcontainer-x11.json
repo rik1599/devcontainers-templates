@@ -1,0 +1,15 @@
+{
+    //.devcontainer file with x11
+    /*In order to use x11 you have to use
+        xhost +local:root   before create container
+        xhost -local:root   after close container
+    */
+    "image": "",
+    "containerEnv": {
+		"XDG_RUNTIME_DIR": "/tmp",
+		"DISPLAY": "${localEnv:DISPLAY}"
+	},
+	"runArgs": [
+		"-v", "/tmp/.X11-unix:/tmp/.X11-unix:rw"
+	]
+}
